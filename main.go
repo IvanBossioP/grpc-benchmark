@@ -151,7 +151,7 @@ func main() {
 	fmt.Printf("\rBenchmark completed, calcolating results...\n")
 
 	if total == 0 {
-		fmt.Printf("No transactions detected, consider increase the benchmark duration or changing detection address")
+		fmt.Printf("No transactions detected, consider increasing the benchmark duration or changing detection address")
 		return
 	}
 
