@@ -11,6 +11,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"sort"
 	"sync"
 	"time"
 )
@@ -24,6 +25,12 @@ type BenchmarkConfig struct {
 type DetectionResult struct {
 	Node      string
 	Timestamp int
+}
+
+type BenchmarkResult struct {
+	Node       string
+	TimesFirst int
+	WinRate    float64
 }
 
 func main() {
@@ -148,18 +155,28 @@ func main() {
 		return
 	}
 
-	var winner string
+	resultsArray := []BenchmarkResult{}
 
 	for k, v := range results {
-		if winner == "" || v > results[winner] {
-			winner = k
-		}
+
+		resultsArray = append(resultsArray, BenchmarkResult{
+			Node: k, TimesFirst: v, WinRate: (float64(v) / float64(total)) * 100,
+		})
+
 	}
 
-	percentage := (float64(results[winner]) / float64(total)) * 100
+	sort.Slice(resultsArray, func(i, j int) bool {
+		return resultsArray[i].TimesFirst > resultsArray[j].TimesFirst
+	})
 
 	fmt.Printf("Detected %d transactions\n", total)
-	fmt.Printf("The winner is %s\n", winner)
-	fmt.Printf("With %d transactions detected first and a winrate of %.2f%%", results[winner], percentage)
+
+	fmt.Printf("The winner is %s\n", resultsArray[0].Node)
+	fmt.Printf("Ranking:\n")
+
+	for i, result := range resultsArray {
+		fmt.Printf("%d) %s detected first %d transactions with a winrate of %.2f%%\n", i+1, result.Node, result.TimesFirst, result.WinRate)
+
+	}
 
 }
