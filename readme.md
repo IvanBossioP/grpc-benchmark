@@ -26,8 +26,8 @@ This tool benchmarks multiple Solana nodes GRPC geyser by detecting transactions
          "http://grpc.node1.com:10000",
          "http://grpc.node2.com:10000"
        ],
-       "benchmarkDuration": 10,
-       "detectionAddress": "YourSolanaAddressHere"
+       "benchmarkDuration": 30,
+       "detectionAddress": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8"
      }
      ```
      - **nodes**: An array of Solana node addresses.
