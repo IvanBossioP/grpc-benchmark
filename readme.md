@@ -66,9 +66,9 @@ Time left: 10s, 15 transactions detected
 Time left: 9s, 124 transactions detected
 ...
 Benchmark completed, calculating results...
-Detected 1146 transactions
-The winner is http://node1.example.com:10002
-With 1146 transactions detected first and a winrate of 99.83%
+Detected 2623 transactions
+The winner is http://grpc.node1.com:10000
+With 1671 transactions detected first and a winrate of 63.71%
 ```
 
 ---
