@@ -68,7 +68,9 @@ Time left: 9s, 124 transactions detected
 Benchmark completed, calculating results...
 Detected 2623 transactions
 The winner is http://grpc.node1.com:10000
-With 1671 transactions detected first and a winrate of 63.71%
+Ranking:
+1) http://grpc.node1.com:10000 detected first 2966 transactions with a winrate of 86.30%
+2) http://grpc.node2.com:10000 detected first 471 transactions with a winrate of 13.70%
 ```
 
 ---
