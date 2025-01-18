@@ -1,0 +1,8 @@
+{
+    "nodes": [
+        "http://grpc.node1.com:10000",
+        "http://grpc.node2.com:10000"
+    ],
+    "benchmarkDuration": 30,
+    "detectionAddress": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8"
+}
